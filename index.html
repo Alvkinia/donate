@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Me</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff8e1;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    h1 {
+      color: #ffb74d;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.1em;
+      margin: 10px 0;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .wallet {
+      background: #fff3e0;
+      border: 2px solid #ffb74d;
+      border-radius: 10px;
+      display: inline-block;
+      padding: 15px 25px;
+      margin: 10px 0;
+      font-family: monospace;
+      cursor: pointer;
+      transition: background 0.3s;
+      max-width: 90%;
+      word-break: break-all;
+    }
+    .wallet:hover {
+      background: #ffe0b2;
+    }
+    .wallet:active {
+      background: #ffcc80;
+    }
+    footer {
+      margin-top: 20px;
+      font-style: italic;
+      color: #555;
+      font-size: 0.9em;
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5em; }
+      p { font-size: 1em; }
+      .wallet { padding: 12px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>💛 Support Me 🤗</h1>
+  
+  <p>Little joys & big smiles — made possible by your energy</p>
+  <p>Do good, and fate will return it to you</p>
+  
+  <div class="wallet" onclick="navigator.clipboard.writeText('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a'); alert('BTC address copied!');">
+    BTC: bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a
+  </div>
+  
+  <div class="wallet" onclick="navigator.clipboard.writeText('TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ'); alert('USDT TRC20 address copied!');">
+    USDT (TRC20): TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ
+  </div>
+  
+  <footer>Thank you for your energy and kindness 💛</footer>
+</body>
+</html>
