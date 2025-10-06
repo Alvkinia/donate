@@ -197,14 +197,14 @@
             <h2>If you’d like to support me:</h2>
             <p>A cup of coffee, a small tip, or just a friendly hello always brightens my day ☕💖. Donations are fully optional and do not create any obligations—it's just a way to say 'hi' if you're feeling generous 😉.</p>
             <ul>
-                <li id="btc-li">
+                <li>
                     <span>• BTC: bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a</span>
-                    <button onclick="copyToClipboard('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a', 'btc-li')">📋 Copy</button>
+                    <button onclick="copyToClipboard('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a', 'btc')">📋 Copy</button>
                     <div class="toast" id="btc-toast"></div>
                 </li>
-                <li id="usdt-li">
+                <li>
                     <span>• USDT (TRC20): TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ</span>
-                    <button onclick="copyToClipboard('TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ', 'usdt-li')">📋 Copy</button>
+                    <button onclick="copyToClipboard('TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ', 'usdt')">📋 Copy</button>
                     <div class="toast" id="usdt-toast"></div>
                 </li>
             </ul>
@@ -221,15 +221,31 @@
     </div>
 
     <script>
-        function copyToClipboard(text, liId) {
-            navigator.clipboard.writeText(text).then(function() {
-                const toast = document.getElementById(liId + '-toast');
-                toast.textContent = 'Copied! You\'re amazing – thanks for spreading kindness! 💖';
-                toast.style.display = 'block';
-                setTimeout(() => { toast.style.display = 'none'; }, 2500);
-            }).catch(function(err) {
-                console.error('Copy failed:', err);
-            });
+        function copyToClipboard(text, toastId) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showToast(toastId, 'Copied! You\'re amazing – thanks for spreading kindness! 💖');
+                }).catch(function(err) {
+                    console.error('Clipboard failed:', err);
+                    fallbackCopy(text, toastId);
+                });
+            } else {
+                fallbackCopy(text, toastId);
+            }
+        }
+
+        function fallbackCopy(text, toastId) {
+            const copied = prompt('Copy this address:', text);
+            if (copied !== null) {
+                showToast(toastId, 'Copied via prompt! You\'re awesome 💖');
+            }
+        }
+
+        function showToast(toastId, message) {
+            const toast = document.getElementById(toastId + '-toast');
+            toast.textContent = message;
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 2500);
         }
 
         const reveals = document.querySelectorAll('.reveal');
