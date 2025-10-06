@@ -44,12 +44,12 @@
 
         h1, h2 {
             text-align: center;
-            color: #5a67d8;
+            color: #6b46c1;
             transition: color 0.3s;
         }
 
         h1:hover, h2:hover {
-            color: #4c51bf;
+            color: #553c9a;
         }
 
         p, ul {
@@ -63,10 +63,11 @@
         }
 
         li {
+            position: relative;
             margin-bottom: 8px;
             padding: 12px;
-            background: #e8f0fe;
-            border-left: 4px solid #5a67d8;
+            background: #f3e8ff;
+            border-left: 4px solid #6b46c1;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             display: flex;
@@ -87,7 +88,7 @@
         }
 
         li button {
-            background: #5a67d8;
+            background: #6b46c1;
             color: white;
             border: none;
             padding: 6px 12px;
@@ -98,18 +99,18 @@
         }
 
         li button:hover {
-            background: #4c51bf;
+            background: #553c9a;
             transform: scale(1.05);
         }
 
         a {
-            color: #5a67d8;
+            color: #6b46c1;
             text-decoration: none;
             transition: color 0.3s;
         }
 
         a:hover {
-            color: #4c51bf;
+            color: #553c9a;
             text-decoration: underline;
         }
 
@@ -125,19 +126,20 @@
             margin: 0;
         }
 
-        #toast {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #48bb78;
+        .toast {
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            background: #38a169;
             color: white;
-            padding: 12px 20px;
+            padding: 8px 16px;
             border-radius: 8px;
             display: none;
             z-index: 1000;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             animation: bounce 0.3s ease;
             font-weight: bold;
+            white-space: nowrap;
         }
 
         @keyframes bounce {
@@ -161,6 +163,11 @@
             }
             section {
                 margin-bottom: 10px;
+            }
+            .toast {
+                bottom: auto;
+                top: 100%;
+                right: 0;
             }
         }
     </style>
@@ -190,13 +197,15 @@
             <h2>If you’d like to support me:</h2>
             <p>A cup of coffee, a small tip, or just a friendly hello always brightens my day ☕💖. Donations are fully optional and do not create any obligations—it's just a way to say 'hi' if you're feeling generous 😉.</p>
             <ul>
-                <li>
+                <li id="btc-li">
                     <span>• BTC: bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a</span>
-                    <button onclick="copyToClipboard('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a')" aria-label="Copy BTC address">📋 Copy</button>
+                    <button onclick="copyToClipboard('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a', 'btc-li')">📋 Copy</button>
+                    <div class="toast" id="btc-toast"></div>
                 </li>
-                <li>
+                <li id="usdt-li">
                     <span>• USDT (TRC20): TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ</span>
-                    <button onclick="copyToClipboard('TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ')" aria-label="Copy USDT address">📋 Copy</button>
+                    <button onclick="copyToClipboard('TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ', 'usdt-li')">📋 Copy</button>
+                    <div class="toast" id="usdt-toast"></div>
                 </li>
             </ul>
             <p>Your support spreads kindness and inspires more good things in the world 🌍✨.</p>
@@ -209,15 +218,13 @@
         <div class="disclaimer reveal">
             <p>⚠️ <strong>Disclaimer:</strong> Donations are completely voluntary and carry no obligations. This page is intended for visitors 18+ only. If you are under 18, please leave this page.</p>
         </div>
-
-        <div id="toast"></div>
     </div>
 
     <script>
-        function copyToClipboard(text) {
+        function copyToClipboard(text, liId) {
             navigator.clipboard.writeText(text).then(function() {
-                const toast = document.getElementById('toast');
-                toast.textContent = 'Copied! 💚';
+                const toast = document.getElementById(liId + '-toast');
+                toast.textContent = 'Copied! You\'re amazing – thanks for spreading kindness! 💖';
                 toast.style.display = 'block';
                 setTimeout(() => { toast.style.display = 'none'; }, 2500);
             }).catch(function(err) {
