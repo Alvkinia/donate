@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A cozy corner for kind souls: sharing stories, vibes, and a little kindness. Connect and spread good energy!">
-  <title>My Cozy Corner</title>
+  <meta name="description" content="A cozy corner of positive energy and good luck.">
+  <title>The Page That Brings Good Luck ✨</title>
   <style>
     * {
       box-sizing: border-box;
@@ -87,6 +87,8 @@
       flex-wrap: nowrap;
       transition: transform 0.2s;
       word-break: break-word;
+      flex-direction: column;
+      text-align: center;
     }
 
     li:hover {
@@ -95,11 +97,18 @@
 
     li span {
       flex-grow: 1;
-      margin-right: 10px;
+      margin-bottom: 6px;
       overflow-wrap: anywhere;
       display: flex;
+      justify-content: center;
       align-items: center;
       gap: 6px;
+    }
+
+    li address {
+      font-family: monospace;
+      word-break: break-all;
+      margin-bottom: 8px;
     }
 
     li button {
@@ -111,7 +120,6 @@
       cursor: pointer;
       font-size: 0.9em;
       transition: background 0.3s, transform 0.2s;
-      align-self: center;
       white-space: nowrap;
     }
 
@@ -141,6 +149,16 @@
 
     .disclaimer p {
       margin: 0;
+    }
+
+    .easter-egg {
+      font-size: 0.7em;
+      color: #777;
+      text-align: center;
+      font-style: italic;
+      margin-top: 6px;
+      margin-bottom: 10px;
+      opacity: 0.8;
     }
 
     .toast {
@@ -175,8 +193,6 @@
     @media (max-width: 600px) {
       body { padding: 10px; }
       .container { padding: 18px 14px; margin: 10px auto; }
-      li { flex-direction: column; align-items: flex-start; }
-      li button { margin-top: 6px; width: 100%; }
       .toast { font-size: 0.9em; bottom: 20px; }
     }
   </style>
@@ -184,17 +200,17 @@
 <body>
   <div class="container reveal">
     <section class="reveal">
-      <h1>Hello and welcome! 👋😊</h1>
-      <p>I’m really glad you decided to visit. Thank you! I hope we can become friends—life is full of surprises, isn’t it?</p>
+      <h1>The Page That Brings Good Luck ✨</h1>
+      <p>Welcome, kind soul 🌸 This space radiates warmth, kindness, and good energy. Maybe today’s the day a small act of kindness changes everything?</p>
     </section>
 
     <section class="reveal">
-      <p>I started this blog partly to escape loneliness, but mostly to meet kind and like-minded people. I’m not seeking fame or attention; I just want genuine connections.</p>
+      <p>I started this blog to share positive energy and meet like-minded people. No fame or drama—just sincerity, smiles, and a little bit of magic 🕊️</p>
     </section>
 
     <section class="reveal">
       <h2>A little about me:</h2>
-      <p>I’m just an ordinary person who loves good food 🍰, traveling ✈️ (even if I haven’t been far), cute animals 🐾, music 🎵, and video games 🎮. Life hasn’t always been easy, but it has made me stronger 💪. I believe in kindness, in karma, and in enjoying life while respecting others.</p>
+      <p>I’m someone who loves good food 🍰, calm music 🎵, cute animals 🐾, and kind people. Life taught me that giving love always brings it back 💫</p>
     </section>
 
     <section class="reveal">
@@ -204,23 +220,27 @@
 
     <section class="reveal">
       <h2>If you’d like to support me:</h2>
-      <p>A cup of coffee, a small tip, or just a friendly hello always brightens my day ☕💖. Donations are fully optional and do not create any obligations—it's just a way to say 'hi' if you're feeling generous 😉.</p>
+      <p>Every small act of kindness counts ☕💖 Whether it’s a message or a donation—it all means more than you know 😉</p>
       <ul>
         <li>
-          <span>🪙 BTC: bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a</span>
+          <span>🪙 BTC</span>
+          <address>bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a</address>
           <button onclick="copyToClipboard('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a')">📋 Copy</button>
         </li>
         <li>
-          <span>💵 USDT (TRC20): TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ</span>
+          <span>💵 USDT (TRC20)</span>
+          <address>TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ</address>
           <button onclick="copyToClipboard('TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ')">📋 Copy</button>
         </li>
       </ul>
-      <p>Your support spreads kindness and inspires more good things in the world 🌍✨.</p>
+      <p>Your support spreads kindness and inspires more good things in the world 🌍</p>
     </section>
 
     <section class="reveal">
       <p style="text-align: center; font-style: italic;">Wishing you happiness, health, and peace. Thank you—from me and from the universe 💛 🤗</p>
     </section>
+
+    <p class="easter-egg">✨ This page radiates positive energy and brings good luck. You give generously — and the universe returns it in kind. ✨</p>
 
     <div class="disclaimer reveal">
       <p>⚠️ <strong>Disclaimer:</strong> Donations are completely voluntary and carry no obligations. This page is intended for visitors 18+ only. If you are under 18, please leave this page.</p>
