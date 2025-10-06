@@ -26,7 +26,7 @@
             background: rgba(255,255,255,0.95);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 25px 20px; /* Уменьшил для компактности */
+            padding: 25px 20px;
             margin: 20px auto;
             opacity: 0;
             transform: translateY(30px);
@@ -39,7 +39,7 @@
         }
 
         section {
-            margin-bottom: 12px; /* Компактнее отступы */
+            margin-bottom: 12px;
         }
 
         h1, h2 {
@@ -54,7 +54,7 @@
 
         p, ul {
             text-align: left;
-            margin-bottom: 12px; /* Уменьшил для одного экрана */
+            margin-bottom: 12px;
         }
 
         ul {
@@ -63,12 +63,12 @@
         }
 
         li {
-            margin-bottom: 8px; /* Ещё компактнее */
-            padding: 12px; /* Немного больше внутри для уюта */
-            background: #e8f0fe; /* Темнее, теплее — не сухо */
+            margin-bottom: 8px;
+            padding: 12px;
+            background: #e8f0fe;
             border-left: 4px solid #5a67d8;
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Лёгкая тень для глубины */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -90,7 +90,7 @@
             background: #5a67d8;
             color: white;
             border: none;
-            padding: 6px 12px; /* Чуть больше для удобства тычка */
+            padding: 6px 12px;
             border-radius: 5px;
             cursor: pointer;
             font-size: 0.9em;
@@ -131,12 +131,12 @@
             right: 20px;
             background: #48bb78;
             color: white;
-            padding: 12px 20px; /* Чуть больше для заметности */
+            padding: 12px 20px;
             border-radius: 8px;
             display: none;
             z-index: 1000;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            animation: bounce 0.3s ease; /* Анимация для "вау" */
+            animation: bounce 0.3s ease;
             font-weight: bold;
         }
 
@@ -148,7 +148,7 @@
 
         @media (max-width: 600px) {
             .container {
-                padding: 18px 15px; /* Компактно на мобиле */
+                padding: 18px 15px;
                 margin: 10px;
             }
             li {
@@ -168,7 +168,7 @@
 <body>
     <div class="container reveal">
         <section class="reveal">
-            <h1>Hello and welcome! 👋😊</h1> <!-- Добавил улыбку для тепла -->
+            <h1>Hello and welcome! 👋😊</h1>
             <p>I’m really glad you decided to visit. Thank you! I hope we can become friends—life is full of surprises, isn’t it?</p>
         </section>
 
@@ -192,7 +192,7 @@
             <ul>
                 <li>
                     <span>• BTC: bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a</span>
-                    <button onclick="copyToClipboard('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a')" aria-label="Copy BTC address">📋 Copy</button> <!-- Иконка для ясности -->
+                    <button onclick="copyToClipboard('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a')" aria-label="Copy BTC address">📋 Copy</button>
                 </li>
                 <li>
                     <span>• USDT (TRC20): TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ</span>
@@ -214,19 +214,17 @@
     </div>
 
     <script>
-        // Copy to clipboard
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(function() {
                 const toast = document.getElementById('toast');
-                toast.textContent = 'Copied! 💚'; // Добавил сердечко для радости
+                toast.textContent = 'Copied! 💚';
                 toast.style.display = 'block';
-                setTimeout(() => { toast.style.display = 'none'; }, 2500); // Чуть дольше для заметности
+                setTimeout(() => { toast.style.display = 'none'; }, 2500);
             }).catch(function(err) {
                 console.error('Copy failed:', err);
             });
         }
 
-        // Scroll reveal animation with stagger delay
         const reveals = document.querySelectorAll('.reveal');
 
         function revealOnScroll() {
