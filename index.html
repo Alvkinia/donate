@@ -140,6 +140,13 @@
             animation: bounce 0.3s ease;
             font-weight: bold;
             white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .toast.show {
+            display: block;
+            opacity: 1;
         }
 
         @keyframes bounce {
@@ -195,16 +202,16 @@
 
         <section class="reveal">
             <h2>If you’d like to support me:</h2>
-            <p>A cup of coffee, a small tip, or just a friendly hello always brightens my day ☕💖. Donations are fully optional and do not create any obligations—it's just a way to say 'hi' if you're feeling generous 😉.</p>
+            <p>A cup of coffee, a small tip, or just a friendly hello always brightens my day ☕💖.</p>
             <ul>
                 <li>
                     <span>• BTC: bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a</span>
-                    <button onclick="copyToClipboard('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a', 'btc')">📋 Copy</button>
+                    <button onclick="copyToClipboard('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a', 'btc-toast')">📋 Copy</button>
                     <div class="toast" id="btc-toast"></div>
                 </li>
                 <li>
                     <span>• USDT (TRC20): TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ</span>
-                    <button onclick="copyToClipboard('TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ', 'usdt')">📋 Copy</button>
+                    <button onclick="copyToClipboard('TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ', 'usdt-toast')">📋 Copy</button>
                     <div class="toast" id="usdt-toast"></div>
                 </li>
             </ul>
@@ -216,7 +223,7 @@
         </section>
 
         <div class="disclaimer reveal">
-            <p>⚠️ <strong>Disclaimer:</strong> Donations are completely voluntary and carry no obligations. This page is intended for visitors 18+ only. If you are under 18, please leave this page.</p>
+            <p>⚠️ <strong>Disclaimer:</strong> Donations are completely voluntary and carry no obligations.</p>
         </div>
     </div>
 
@@ -242,10 +249,15 @@
         }
 
         function showToast(toastId, message) {
-            const toast = document.getElementById(toastId + '-toast');
+            const toast = document.getElementById(toastId);
+            if (!toast) return;
             toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => { toast.style.display = 'none'; }, 400);
+            }, 2500);
             toast.style.display = 'block';
-            setTimeout(() => { toast.style.display = 'none'; }, 2500);
         }
 
         const reveals = document.querySelectorAll('.reveal');
