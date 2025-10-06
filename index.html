@@ -35,8 +35,10 @@
     }
 
     h1 span {
-      display: inline-block;
-      transform: translateY(6px);
+      display: block;
+      text-align: center;
+      margin-top: 5px;
+      font-size: 1.2em;
     }
 
     p {
@@ -44,8 +46,15 @@
       line-height: 1.5;
     }
 
-    a { color: #6b46c1; text-decoration: none; }
-    a:hover { color: #553c9a; text-decoration: underline; }
+    a {
+      color: #c25cff;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: #a046d7;
+      text-decoration: underline;
+    }
 
     ul { list-style: none; padding: 0; margin: 0; }
     li {
@@ -120,7 +129,7 @@
     }
 
     .easter-egg {
-      font-size: 0.72rem;
+      font-size: 0.58rem;
       color: #666;
       text-align: center;
       font-style: italic;
@@ -181,7 +190,7 @@
 <body>
   <div class="container" tabindex="0">
     <section>
-      <h1>Hello and welcome <span>👋😊</span></h1>
+      <h1>Hello and welcome!<span>👋😊</span></h1>
       <p>I’m really glad you decided to visit. Thank you! I hope we can become friends — life is full of surprises, isn’t it?</p>
     </section>
 
@@ -196,6 +205,7 @@
 
     <section>
       <h2>Find me on Instagram: <a href="https://www.instagram.com/alvkinia/" target="_blank" rel="noopener noreferrer">@alvkinia</a></h2>
+      <p style="font-size: 0.85rem; text-align: center;">(If I start using other social media, the info will appear here.)</p>
     </section>
 
     <section>
