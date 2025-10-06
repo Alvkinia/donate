@@ -1,227 +1,263 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A cozy corner for kind souls: sharing stories, vibes, and a little kindness. Connect and spread good energy!">
-    <title>My Cozy Corner</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            scroll-behavior: smooth;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A cozy corner for kind souls: sharing stories, vibes, and a little kindness. Connect and spread good energy!">
+  <title>My Cozy Corner</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .container {
-            max-width: 600px;
-            width: 100%;
-            background: rgba(255,255,255,0.95);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 25px 20px;
-            margin: 20px auto;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
+    html, body {
+      overflow-x: hidden; /* убирает горизонтальную прокрутку */
+      width: 100%;
+    }
 
-        .visible { opacity: 1; transform: translateY(0); }
+    body {
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
+      scroll-behavior: smooth;
+    }
 
-        section { margin-bottom: 12px; }
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 25px 20px;
+      margin: 20px auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
 
-        h1, h2 {
-            text-align: center;
-            color: #6b46c1;
-            transition: color 0.3s;
-        }
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        h1:hover, h2:hover { color: #553c9a; }
+    section {
+      margin-bottom: 12px;
+    }
 
-        p, ul { text-align: left; margin-bottom: 12px; }
+    h1, h2 {
+      text-align: center;
+      color: #6b46c1;
+      transition: color 0.3s;
+    }
 
-        ul { list-style: none; padding: 0; }
+    h1:hover, h2:hover {
+      color: #553c9a;
+    }
 
-        li {
-            position: relative;
-            margin-bottom: 8px;
-            padding: 12px;
-            background: #f3e8ff;
-            border-left: 4px solid #6b46c1;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            transition: transform 0.2s;
-        }
+    p, ul {
+      text-align: left;
+      margin-bottom: 12px;
+    }
 
-        li:hover { transform: translateX(5px); }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
 
-        li span {
-            flex-grow: 1;
-            margin-right: 10px;
-            word-break: break-all;
-        }
+    li {
+      position: relative;
+      margin-bottom: 8px;
+      padding: 12px;
+      background: #f3e8ff;
+      border-left: 4px solid #6b46c1;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      transition: transform 0.2s;
+      word-break: break-word;
+    }
 
-        li button {
-            background: #6b46c1;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9em;
-            transition: background 0.3s, transform 0.2s;
-        }
+    li:hover {
+      transform: translateX(3px);
+    }
 
-        li button:hover {
-            background: #553c9a;
-            transform: scale(1.05);
-        }
+    li span {
+      flex-grow: 1;
+      margin-right: 10px;
+      overflow-wrap: anywhere;
+    }
 
-        a {
-            color: #6b46c1;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+    li button {
+      background: #6b46c1;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: background 0.3s, transform 0.2s;
+    }
 
-        a:hover { color: #553c9a; text-decoration: underline; }
+    li button:hover {
+      background: #553c9a;
+      transform: scale(1.05);
+    }
 
-        .disclaimer {
-            font-size: 0.85em;
-            color: #666;
-            border-top: 1px solid #eee;
-            padding-top: 12px;
-            text-align: center;
-        }
+    a {
+      color: #6b46c1;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
 
-        .disclaimer p { margin: 0; }
+    a:hover {
+      color: #553c9a;
+      text-decoration: underline;
+    }
 
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #38a169;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            display: none;
-            z-index: 9999;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            font-weight: bold;
-            white-space: nowrap;
-        }
+    .disclaimer {
+      font-size: 0.85em;
+      color: #666;
+      border-top: 1px solid #eee;
+      padding-top: 12px;
+      text-align: center;
+    }
 
-        .toast.show {
-            display: block;
-            animation: fade 2.5s ease forwards;
-        }
+    .disclaimer p {
+      margin: 0;
+    }
 
-        @keyframes fade {
-            0% { opacity: 0; transform: translate(-50%, 10px); }
-            10% { opacity: 1; transform: translate(-50%, 0); }
-            90% { opacity: 1; }
-            100% { opacity: 0; transform: translate(-50%, 10px); }
-        }
+    .toast {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #38a169;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      display: none;
+      z-index: 9999;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      font-weight: bold;
+      white-space: nowrap;
+      text-align: center;
+    }
 
-        @media (max-width: 600px) {
-            li { flex-direction: column; align-items: flex-start; }
-            li button { margin-top: 5px; width: 100%; }
-        }
-    </style>
+    .toast.show {
+      display: block;
+      animation: fade 2.5s ease forwards;
+    }
+
+    @keyframes fade {
+      0% { opacity: 0; transform: translate(-50%, 10px); }
+      10% { opacity: 1; transform: translate(-50%, 0); }
+      90% { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%, 10px); }
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 10px; }
+      .container { padding: 18px 14px; margin: 10px auto; }
+      li { flex-direction: column; align-items: flex-start; }
+      li button { margin-top: 6px; width: 100%; }
+      .toast { font-size: 0.9em; bottom: 20px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container reveal">
-        <section class="reveal">
-            <h1>Hello and welcome! 👋😊</h1>
-            <p>I’m really glad you decided to visit. Thank you! I hope we can become friends—life is full of surprises, isn’t it?</p>
-        </section>
+  <div class="container reveal">
+    <section class="reveal">
+      <h1>Hello and welcome! 👋😊</h1>
+      <p>I’m really glad you decided to visit. Thank you! I hope we can become friends—life is full of surprises, isn’t it?</p>
+    </section>
 
-        <section class="reveal">
-            <p>I started this blog partly to escape loneliness, but mostly to meet kind and like-minded people. I’m not seeking fame or attention; I just want genuine connections.</p>
-        </section>
+    <section class="reveal">
+      <p>I started this blog partly to escape loneliness, but mostly to meet kind and like-minded people. I’m not seeking fame or attention; I just want genuine connections.</p>
+    </section>
 
-        <section class="reveal">
-            <h2>A little about me:</h2>
-            <p>I’m just an ordinary person who loves good food 🍰, traveling ✈️ (even if I haven’t been far), cute animals 🐾, music 🎵, and video games 🎮. Life hasn’t always been easy, but it has made me stronger 💪. I believe in kindness, in karma, and in enjoying life while respecting others.</p>
-        </section>
+    <section class="reveal">
+      <h2>A little about me:</h2>
+      <p>I’m just an ordinary person who loves good food 🍰, traveling ✈️ (even if I haven’t been far), cute animals 🐾, music 🎵, and video games 🎮. Life hasn’t always been easy, but it has made me stronger 💪. I believe in kindness, in karma, and in enjoying life while respecting others.</p>
+    </section>
 
-        <section class="reveal">
-            <h2>Find me on Instagram: <a href="https://www.instagram.com/alvkinia/" target="_blank">@alvkinia</a></h2>
-            <p>If I join other social media, I’ll share them here.</p>
-        </section>
+    <section class="reveal">
+      <h2>Find me on Instagram: <a href="https://www.instagram.com/alvkinia/" target="_blank">@alvkinia</a></h2>
+      <p>If I join other social media, I’ll share them here.</p>
+    </section>
 
-        <section class="reveal">
-            <h2>If you’d like to support me:</h2>
-            <p>A cup of coffee, a small tip, or just a friendly hello always brightens my day ☕💖. Donations are fully optional and do not create any obligations—it's just a way to say 'hi' if you're feeling generous 😉.</p>
-            <ul>
-                <li>
-                    <span>• BTC: bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a</span>
-                    <button onclick="copyToClipboard('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a')">📋 Copy</button>
-                </li>
-                <li>
-                    <span>• USDT (TRC20): TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ</span>
-                    <button onclick="copyToClipboard('TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ')">📋 Copy</button>
-                </li>
-            </ul>
-            <p>Your support spreads kindness and inspires more good things in the world 🌍✨.</p>
-        </section>
+    <section class="reveal">
+      <h2>If you’d like to support me:</h2>
+      <p>A cup of coffee, a small tip, or just a friendly hello always brightens my day ☕💖. Donations are fully optional and do not create any obligations—it's just a way to say 'hi' if you're feeling generous 😉.</p>
+      <ul>
+        <li>
+          <span>• BTC: bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a</span>
+          <button onclick="copyToClipboard('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a')">📋 Copy</button>
+        </li>
+        <li>
+          <span>• USDT (TRC20): TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ</span>
+          <button onclick="copyToClipboard('TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ')">📋 Copy</button>
+        </li>
+      </ul>
+      <p>Your support spreads kindness and inspires more good things in the world 🌍✨.</p>
+    </section>
 
-        <section class="reveal">
-            <p style="text-align: center; font-style: italic;">Wishing you happiness, health, and peace. Thank you—from me and from the universe 💛 🤗</p>
-        </section>
+    <section class="reveal">
+      <p style="text-align: center; font-style: italic;">Wishing you happiness, health, and peace. Thank you—from me and from the universe 💛 🤗</p>
+    </section>
 
-        <div class="disclaimer reveal">
-            <p>⚠️ <strong>Disclaimer:</strong> Donations are completely voluntary and carry no obligations. This page is intended for visitors 18+ only. If you are under 18, please leave this page.</p>
-        </div>
+    <div class="disclaimer reveal">
+      <p>⚠️ <strong>Disclaimer:</strong> Donations are completely voluntary and carry no obligations. This page is intended for visitors 18+ only. If you are under 18, please leave this page.</p>
     </div>
+  </div>
 
-    <div id="toast" class="toast">Thanks 🤗💋</div>
+  <div id="toast" class="toast">Thanks 🤗💋</div>
 
-    <script>
-        function copyToClipboard(text) {
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(text)
-                    .then(() => showToast())
-                    .catch(() => fallbackCopy(text));
-            } else {
-                fallbackCopy(text);
-            }
+  <script>
+    function copyToClipboard(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text)
+          .then(() => showToast())
+          .catch(() => fallbackCopy(text));
+      } else {
+        fallbackCopy(text);
+      }
+    }
+
+    function fallbackCopy(text) {
+      const copied = prompt('Copy this address:', text);
+      if (copied !== null) showToast();
+    }
+
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    const reveals = document.querySelectorAll('.reveal');
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      reveals.forEach((el, index) => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 50 && !el.classList.contains('visible')) {
+          setTimeout(() => el.classList.add('visible'), index * 150);
         }
-
-        function fallbackCopy(text) {
-            const copied = prompt('Copy this address:', text);
-            if (copied !== null) showToast();
-        }
-
-        function showToast() {
-            const toast = document.getElementById('toast');
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 2500);
-        }
-
-        const reveals = document.querySelectorAll('.reveal');
-        function revealOnScroll() {
-            const windowHeight = window.innerHeight;
-            reveals.forEach((el, index) => {
-                const elementTop = el.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 50 && !el.classList.contains('visible')) {
-                    setTimeout(() => el.classList.add('visible'), index * 150);
-                }
-            });
-        }
-        window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('load', revealOnScroll);
-    </script>
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 </body>
 </html>
