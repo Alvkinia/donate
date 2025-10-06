@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Alvkinia. A lucky page filled with positive energy and kindness.">
+  
   <title>Alvkinia. The Lucky Page</title>
   
+  <meta name="description" content="A generous donation here is a kind act that spreads waves of goodness. Share with others and let positivity multiply. May it be so." />
   <meta property="og:title" content="Alvkinia. The Lucky Page" />
-  <meta property="og:description" content="Alvkinia. A lucky page filled with positive energy and kindness." />
+  <meta property="og:description" content="A generous donation here is a kind act that spreads waves of goodness. Share with others and let positivity multiply. May it be so." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alvkinia.github.io/donate/" />
   
@@ -33,25 +34,10 @@
       padding: 26px;
       margin: 20px auto;
     }
-    h1, h2 {
-      text-align: center;
-      color: #6b46c1;
-    }
-    h1 span {
-      display: block;
-      text-align: center;
-      margin-top: 5px;
-      font-size: 1.2em;
-    }
-    p {
-      margin-bottom: 12px;
-      line-height: 1.5;
-    }
-    a {
-      color: #c25cff;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
+    h1, h2 { text-align: center; color: #6b46c1; }
+    h1 span { display: block; text-align: center; margin-top: 5px; font-size: 1.2em; }
+    p { margin-bottom: 12px; line-height: 1.5; }
+    a { color: #c25cff; text-decoration: none; transition: color 0.2s ease; }
     a:hover { color: #a046d7; text-decoration: underline; }
     ul { list-style: none; padding: 0; margin: 0; }
     li {
@@ -113,41 +99,13 @@
       transition: transform .12s ease, background .18s ease;
     }
     .wallet-button:hover { transform: scale(1.05); background: #553c9a; }
-    .support-text {
-      text-align: center;
-      font-style: italic;
-      margin-top: 10px;
-    }
-    .easter-egg {
-      font-size: 0.35rem;
-      color: #666;
-      text-align: center;
-      font-style: italic;
-      margin-top: 8px;
-      margin-bottom: 8px;
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: opacity .35s ease, max-height .35s ease;
-    }
+    .support-text { text-align: center; font-style: italic; margin-top: 10px; }
+    .easter-egg { font-size: 0.35rem; color: #666; text-align: center; font-style: italic; margin-top: 8px; margin-bottom: 8px; opacity: 0; max-height: 0; overflow: hidden; transition: opacity .35s ease, max-height .35s ease; }
     .container:hover .easter-egg,
-    .container:focus-within .easter-egg {
-      opacity: 1;
-      max-height: 200px;
-    }
-    .disclaimer {
-      font-size: 0.88rem;
-      color: #555;
-      border-top: 1px solid #eee;
-      padding-top: 12px;
-      text-align: center;
-    }
-    .footer-alvkinia {
-      text-align: center;
-      color: #e4e8ff;
-      font-size: 0.9rem;
-      margin-top: 6px;
-    }
+    .container:focus-within .easter-egg { opacity: 1; max-height: 200px; }
+    .disclaimer { font-size: 0.88rem; color: #555; border-top: 1px solid #eee; padding-top: 12px; text-align: center; }
+    .footer-alvkinia { text-align: center; color: #e4e8ff; font-size: 0.9rem; margin-top: 6px; }
+    .footer-donation { text-align: center; font-size: 0.75rem; color: #555; margin-top: 4px; }
     .toast {
       position: fixed;
       left: 50%;
@@ -166,11 +124,7 @@
       opacity: 0;
       transition: opacity .25s ease, transform .25s ease;
     }
-    .toast.show {
-      display: block;
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
+    .toast.show { display: block; opacity: 1; transform: translateX(-50%) translateY(0); }
     @media (max-width: 680px) {
       .container { padding: 18px; }
       li { flex-direction: column; align-items: stretch; text-align: center; gap: 10px; }
@@ -235,6 +189,9 @@
     </div>
 
     <div class="footer-alvkinia">Alvkinia</div>
+    <div class="footer-donation">
+      A generous donation here is a kind act that spreads waves of goodness. Share with others and let positivity multiply. May it be so.
+    </div>
   </div>
 
   <div id="toast" class="toast">Thanks! 🤗💋</div>
