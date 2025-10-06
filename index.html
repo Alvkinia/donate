@@ -1,80 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support Me</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #fff8e1;
-      color: #333;
-      text-align: center;
-      padding: 20px;
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    h1 {
-      color: #ffb74d;
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 1.1em;
-      margin: 10px 0;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .wallet {
-      background: #fff3e0;
-      border: 2px solid #ffb74d;
-      border-radius: 10px;
-      display: inline-block;
-      padding: 15px 25px;
-      margin: 10px 0;
-      font-family: monospace;
-      cursor: pointer;
-      transition: background 0.3s;
-      max-width: 90%;
-      word-break: break-all;
-    }
-    .wallet:hover {
-      background: #ffe0b2;
-    }
-    .wallet:active {
-      background: #ffcc80;
-    }
-    footer {
-      margin-top: 20px;
-      font-style: italic;
-      color: #555;
-      font-size: 0.9em;
-    }
-    @media (max-width: 600px) {
-      h1 { font-size: 1.5em; }
-      p { font-size: 1em; }
-      .wallet { padding: 12px 20px; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A cozy corner for kind souls: sharing stories, vibes, and a little kindness. Connect and spread good energy!">
+    <title>My Cozy Corner</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px 25px; /* Чуть меньше padding для компактности на телефоне */
+            margin: 20px auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section {
+            margin-bottom: 20px; /* Компактные отступы между секциями */
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #5a67d8;
+            transition: color 0.3s;
+        }
+
+        h1:hover, h2:hover {
+            color: #4c51bf;
+        }
+
+        p, ul {
+            text-align: left;
+            margin-bottom: 15px; /* Уменьшил для одного экрана */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #f7fafc;
+            border-left: 4px solid #5a67d8;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            transition: transform 0.2s;
+        }
+
+        li:hover {
+            transform: translateX(5px);
+        }
+
+        li span {
+            flex-grow: 1;
+            margin-right: 10px;
+            word-break: break-all;
+        }
+
+        li button {
+            background: #5a67d8;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        li button:hover {
+            background: #4c51bf;
+            transform: scale(1.05);
+        }
+
+        a {
+            color: #5a67d8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #4c51bf;
+            text-decoration: underline;
+        }
+
+        .disclaimer {
+            font-size: 0.85em;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 15px; /* Компактнее */
+            text-align: center;
+        }
+
+        .disclaimer p {
+            margin: 0;
+        }
+
+        #toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #48bb78;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+                margin: 10px;
+            }
+            li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            li button {
+                margin-top: 5px;
+                width: 100%;
+            }
+            section {
+                margin-bottom: 15px; /* Ещё компактнее на мобиле */
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>💛 Support Me 🤗</h1>
-  
-  <p>Little joys & big smiles — made possible by your energy</p>
-  <p>Do good, and fate will return it to you</p>
-  
-  <div class="wallet" onclick="navigator.clipboard.writeText('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a'); alert('BTC address copied!');">
-    BTC: bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a
-  </div>
-  
-  <div class="wallet" onclick="navigator.clipboard.writeText('TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ'); alert('USDT TRC20 address copied!');">
-    USDT (TRC20): TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ
-  </div>
-  
-  <footer>Thank you for your energy and kindness 💛</footer>
+    <div class="container reveal">
+        <section class="reveal">
+            <h1>Hello and welcome! 👋</h1>
+            <p>I’m really glad you decided to visit. Thank you! I hope we can become friends—life is full of surprises, isn’t it?</p>
+        </section>
+
+        <section class="reveal">
+            <p>I started this blog partly to escape loneliness, but mostly to meet kind and like-minded people. I’m not seeking fame or attention; I just want genuine connections.</p>
+        </section>
+
+        <section class="reveal">
+            <h2>A little about me:</h2>
+            <p>I’m just an ordinary person who loves good food 🍰, traveling ✈️ (even if I haven’t been far), cute animals 🐾, music 🎵, and video games 🎮. Life hasn’t always been easy, but it has made me stronger 💪. I believe in kindness, in karma, and in enjoying life while respecting others.</p>
+        </section>
+
+        <section class="reveal">
+            <h2>Find me on Instagram: <a href="https://www.instagram.com/alvkinia/" target="_blank">@alvkinia</a></h2>
+            <p>If I join other social media, I’ll share them here.</p>
+        </section>
+
+        <section class="reveal">
+            <h2>If you’d like to support me:</h2>
+            <p>A cup of coffee, a small tip, or just a friendly hello always brightens my day ☕💖. Donations are fully optional and do not create any obligations—it's just a way to say 'hi' if you're feeling generous 😉.</p>
+            <ul>
+                <li>
+                    <span>• BTC: bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a</span>
+                    <button onclick="copyToClipboard('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a')" aria-label="Copy BTC address">Copy</button>
+                </li>
+                <li>
+                    <span>• USDT (TRC20): TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ</span>
+                    <button onclick="copyToClipboard('TR8F8P7hMHQkYPZmFPS9mfz7kqkYuxLNLQ')" aria-label="Copy USDT address">Copy</button>
+                </li>
+            </ul>
+            <p>Your support spreads kindness and inspires more good things in the world 🌍✨.</p>
+        </section>
+
+        <section class="reveal">
+            <p style="text-align: center; font-style: italic;">Wishing you happiness, health, and peace. Thank you—from me and from the universe 💛 🤗</p>
+        </section>
+
+        <div class="disclaimer reveal">
+            <p>⚠️ <strong>Disclaimer:</strong> Donations are completely voluntary and carry no obligations. This page is intended for visitors 18+ only. If you are under 18, please leave this page.</p>
+        </div>
+
+        <div id="toast"></div>
+    </div>
+
+    <script>
+        // Copy to clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                const toast = document.getElementById('toast');
+                toast.textContent = 'Copied! 😊';
+                toast.style.display = 'block';
+                setTimeout(() => { toast.style.display = 'none'; }, 2000);
+            }).catch(function(err) {
+                console.error('Copy failed:', err);
+            });
+        }
+
+        // Scroll reveal animation with stagger delay
+        const reveals = document.querySelectorAll('.reveal');
+
+        function revealOnScroll() {
+            const windowHeight = window.innerHeight;
+            reveals.forEach((el, index) => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 50 && !el.classList.contains('visible')) {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, index * 150); // Твоя задержка — для магии!
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
 </body>
 </html>
