@@ -17,7 +17,6 @@
       justify-content: flex-start;
       align-items: center;
       padding: 20px;
-      scroll-behavior: smooth;
     }
 
     .container {
@@ -28,19 +27,17 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       padding: 26px;
       margin: 20px auto;
-      transform: translateY(8px);
-      transition: transform .45s ease, opacity .45s ease;
     }
-    .reveal.visible { transform:none; opacity:1; }
-
-    section { margin-bottom: 12px; }
 
     h1, h2 {
       text-align: center;
       color: #6b46c1;
-      transition: color .25s;
     }
-    h1:hover, h2:hover { color: #553c9a; }
+
+    h1 span {
+      display: inline-block;
+      transform: translateY(6px);
+    }
 
     p {
       margin-bottom: 12px;
@@ -58,15 +55,16 @@
       gap: 16px;
       background: #f3e8ff;
       border-left: 4px solid #6b46c1;
-      border-radius: 8px;
+      border-radius: 10px;
       padding: 14px 16px;
       margin-bottom: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
       word-break: break-word;
       transition: box-shadow .3s ease, transform .2s ease;
     }
+
     li:hover {
-      box-shadow: 0 0 16px rgba(107,70,193,0.25);
+      box-shadow: 0 0 18px rgba(107,70,193,0.45), 0 0 24px rgba(200,150,255,0.25);
       transform: translateY(-2px);
     }
 
@@ -90,7 +88,7 @@
     }
 
     .wallet-address {
-      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-family: 'JetBrains Mono', monospace;
       font-size: 0.95rem;
       background: #faf8ff;
       padding: 6px 10px;
@@ -113,7 +111,7 @@
       white-space: nowrap;
       transition: transform .12s ease, background .18s ease;
     }
-    .wallet-button:hover { transform: scale(1.03); background: #553c9a; }
+    .wallet-button:hover { transform: scale(1.05); background: #553c9a; }
 
     .support-text {
       text-align: center;
@@ -181,28 +179,28 @@
   </style>
 </head>
 <body>
-  <div class="container reveal" tabindex="0">
-    <section class="reveal">
-      <h1>Hello and welcome! 👋😊</h1>
-      <p>I’m really glad you decided to visit. Thank you! I hope we can become friends—life is full of surprises, isn’t it?</p>
+  <div class="container" tabindex="0">
+    <section>
+      <h1>Hello and welcome <span>👋😊</span></h1>
+      <p>I’m really glad you decided to visit. Thank you! I hope we can become friends — life is full of surprises, isn’t it?</p>
     </section>
 
-    <section class="reveal">
+    <section>
       <p>I started this page to meet kind and like-minded people. I’m not seeking fame; I just want genuine connections built on good energy.</p>
     </section>
 
-    <section class="reveal">
+    <section>
       <h2>A little about me:</h2>
       <p>I love good food 🍰, traveling ✈️, animals 🐾, music 🎵, and video games 🎮. Life hasn’t always been easy, but it made me stronger 💪. I believe in kindness, karma, and positive energy.</p>
     </section>
 
-    <section class="reveal">
+    <section>
       <h2>Find me on Instagram: <a href="https://www.instagram.com/alvkinia/" target="_blank" rel="noopener noreferrer">@alvkinia</a></h2>
     </section>
 
-    <section class="reveal">
+    <section>
       <h2>If you’d like to support me:</h2>
-      <p>A cup of coffee or a small donation means a lot ☕💖. It’s not an obligation, just kindness shared.</p>
+      <p>A cup of coffee or a small donation means a lot ☕💖💅👜💍 Donations are completely optional and create no obligations — it’s simply a way to say “hi” if you’re feeling generous, or to do a kind act and spread good vibes 😉</p>
 
       <ul>
         <li>
@@ -222,19 +220,15 @@
         </li>
       </ul>
 
-      <p class="support-text">Your support spreads kindness and inspires more good things in the world 💫</p>
-    </section>
-
-    <section class="reveal">
-      <p style="text-align: center; font-style: italic;">Wishing you luck, happiness, and peace 💛</p>
+      <p class="support-text">Your support spreads kindness and inspires more good things in the world 🌍</p>
     </section>
 
     <p class="easter-egg">
       This page radiates positive energy and brings good luck. You are generous — the universe will return your kindness.
     </p>
 
-    <div class="disclaimer reveal">
-      <p>⚠️ <strong>Disclaimer:</strong> Donations are completely voluntary and carry no obligations. Visitors must be 18+.</p>
+    <div class="disclaimer">
+      <p>⚠️ <strong>Disclaimer:</strong> Donations are completely voluntary and carry no obligations. Visitors must be 18+ — if you are under 18, please leave this page.</p>
     </div>
   </div>
 
@@ -258,19 +252,6 @@
       t.classList.add('show');
       setTimeout(() => { t.classList.remove('show'); }, 2200);
     }
-
-    const reveals = document.querySelectorAll('.reveal');
-    function revealOnScroll() {
-      const winH = window.innerHeight;
-      reveals.forEach((el, index) => {
-        const top = el.getBoundingClientRect().top;
-        if (top < winH - 50 && !el.classList.contains('visible')) {
-          setTimeout(() => el.classList.add('visible'), index * 120);
-        }
-      });
-    }
-    window.addEventListener('load', revealOnScroll);
-    window.addEventListener('scroll', revealOnScroll);
   </script>
 </body>
 </html>
