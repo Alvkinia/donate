@@ -63,27 +63,24 @@
     .wallet-button { flex: 0 0 auto; background: #6b46c1; color: #fff; border: none; padding: 9px 14px; border-radius: 6px; cursor: pointer; font-size: 0.95rem; white-space: nowrap; transition: transform .12s ease, background .18s ease; }
     .wallet-button:hover { transform: scale(1.05); background: #553c9a; }
     .support-text { text-align: center; font-style: italic; margin-top: 10px; }
-    .easter-egg {
-      font-size: 0.35rem;
-      color: #666;
-      text-align: center;
-      font-style: italic;
-      margin-top: 8px;
-      margin-bottom: 8px;
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: opacity .35s ease, max-height .35s ease;
-    }
-    .container:hover .easter-egg,
-    .container:focus-within .easter-egg {
-      opacity: 1;
-      max-height: 200px;
-    }
     .disclaimer { font-size: 0.88rem; color: #555; border-top: 1px solid #eee; padding-top: 12px; text-align: center; }
-    .footer-alvkinia { text-align: center; color: #e4e8ff; font-size: 0.9rem; margin-top: 6px; }
-    .secret-text { font-size: 0.15rem; color: #e4e8ff; text-align: center; margin-top: 6px; user-select: none; }
-    .hidden-easter { font-size: 0.1rem; color: #e4e8ff; text-align: center; user-select: none; }
+    .footer-alvkinia { text-align: center; color: #e4e8ff; font-size: 0.9rem; margin-top: 6px; position: relative; cursor: default; }
+    .secret-text { font-size: 0.12rem; color: #e4e8ff; text-align: center; margin-top: 2px; user-select: none; }
+    .hidden-easter {
+      font-size: 0.1rem;
+      color: #e4e8ff;
+      text-align: center;
+      user-select: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      position: absolute;
+      width: 100%;
+      top: -12px;
+      left: 0;
+    }
+    .footer-alvkinia:hover .hidden-easter {
+      opacity: 1;
+    }
     .toast { position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%); background: #38a169; color: #fff; padding: 10px 16px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.15); z-index: 9999; font-weight: 600; display: none; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .25s ease, transform .25s ease; }
     .toast.show { display: block; opacity: 1; transform: translateX(-50%) translateY(0); }
     @media (max-width: 680px) {
@@ -128,7 +125,6 @@
           </div>
           <button class="wallet-button" onclick="copyToClipboard('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a')">📋 Copy</button>
         </li>
-
         <li>
           <div class="wallet-left">
             <span class="wallet-label">💵 USDT (TRC20)</span>
@@ -141,17 +137,15 @@
       <p class="support-text">Your support spreads kindness and inspires more good things in the world 🌍</p>
     </section>
 
-    <p class="easter-egg">
-      This page radiates positive energy and brings good luck. You are generous — the universe will return your kindness.
-    </p>
-
     <div class="disclaimer">
       <p>⚠️ <strong>Disclaimer:</strong> Donations are completely voluntary and carry no obligations. Visitors must be 18+ — if you are under 18, please leave this page.</p>
     </div>
 
-    <div class="footer-alvkinia">Alvkinia</div>
+    <div class="footer-alvkinia">
+      Alvkinia
+      <div class="hidden-easter">This page radiates positive energy and brings good luck. You are generous — the universe will return your kindness.</div>
+    </div>
     <div class="secret-text">A generous donation here is a kind act that spreads waves of goodness. Share with others and let positivity multiply. May it be so.</div>
-    <div class="hidden-easter">This page radiates positive energy and brings good luck. You are generous — the universe will return your kindness.</div>
   </div>
 
   <div id="toast" class="toast">Thanks! 🤗💋</div>
@@ -172,4 +166,3 @@
   </script>
 </body>
 </html>
-
