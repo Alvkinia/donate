@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  
+  <meta name="description" content="Alvkinia. A lucky page filled with positive energy and kindness.">
   <title>Alvkinia. The Lucky Page</title>
   
-  <meta name="description" content="A generous donation here is a kind act that spreads waves of goodness. Share with others and let positivity multiply. May it be so." />
   <meta property="og:title" content="Alvkinia. The Lucky Page" />
-  <meta property="og:description" content="A generous donation here is a kind act that spreads waves of goodness. Share with others and let positivity multiply. May it be so." />
+  <meta property="og:description" content="Alvkinia. A lucky page filled with positive energy and kindness." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alvkinia.github.io/donate/" />
   
@@ -54,76 +53,30 @@
       word-break: break-word;
       transition: box-shadow .3s ease, transform .2s ease;
     }
-    li:hover {
-      box-shadow: 0 0 18px rgba(107,70,193,0.45), 0 0 24px rgba(200,150,255,0.25);
-      transform: translateY(-2px);
-    }
-    .wallet-left {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      flex: 1 1 auto;
-      text-align: center;
-    }
-    .wallet-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 600;
-      color: #3b2a72;
-      font-size: 1rem;
-    }
-    .wallet-address {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.95rem;
-      background: #faf8ff;
-      padding: 6px 10px;
-      border-radius: 6px;
-      user-select: all;
-      word-break: break-all;
-      max-width: 100%;
-      line-height: 1.4;
-    }
-    .wallet-button {
-      flex: 0 0 auto;
-      background: #6b46c1;
-      color: #fff;
-      border: none;
-      padding: 9px 14px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.95rem;
-      white-space: nowrap;
-      transition: transform .12s ease, background .18s ease;
-    }
+    li:hover { box-shadow: 0 0 18px rgba(107,70,193,0.45), 0 0 24px rgba(200,150,255,0.25); transform: translateY(-2px); }
+    .wallet-left { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; flex: 1 1 auto; text-align: center; }
+    .wallet-label { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: #3b2a72; font-size: 1rem; }
+    .wallet-address { font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; background: #faf8ff; padding: 6px 10px; border-radius: 6px; user-select: all; word-break: break-all; max-width: 100%; line-height: 1.4; }
+    .wallet-button { flex: 0 0 auto; background: #6b46c1; color: #fff; border: none; padding: 9px 14px; border-radius: 6px; cursor: pointer; font-size: 0.95rem; white-space: nowrap; transition: transform .12s ease, background .18s ease; }
     .wallet-button:hover { transform: scale(1.05); background: #553c9a; }
     .support-text { text-align: center; font-style: italic; margin-top: 10px; }
-    .easter-egg { font-size: 0.35rem; color: #666; text-align: center; font-style: italic; margin-top: 8px; margin-bottom: 8px; opacity: 0; max-height: 0; overflow: hidden; transition: opacity .35s ease, max-height .35s ease; }
-    .container:hover .easter-egg,
-    .container:focus-within .easter-egg { opacity: 1; max-height: 200px; }
+    .easter-egg-container { text-align: center; margin-top: 8px; }
+    .easter-egg { font-size: 0.35rem; color: #666; font-style: italic; cursor: pointer; display: inline-block; position: relative; }
+    .super-easter-egg {
+      font-size: 0.18rem;
+      color: #e4e8ff;
+      font-style: italic;
+      margin-top: 2px;
+      display: block;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height .5s ease, opacity .5s ease;
+    }
+    .easter-egg:hover .super-easter-egg { max-height: 300px; opacity: 1; }
     .disclaimer { font-size: 0.88rem; color: #555; border-top: 1px solid #eee; padding-top: 12px; text-align: center; }
     .footer-alvkinia { text-align: center; color: #e4e8ff; font-size: 0.9rem; margin-top: 6px; }
-    .footer-donation { text-align: center; font-size: 0.75rem; color: #555; margin-top: 4px; }
-    .toast {
-      position: fixed;
-      left: 50%;
-      bottom: 26px;
-      transform: translateX(-50%);
-      background: #38a169;
-      color: #fff;
-      padding: 10px 16px;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-      z-index: 9999;
-      font-weight: 600;
-      display: none;
-      white-space: nowrap;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity .25s ease, transform .25s ease;
-    }
+    .toast { position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%); background: #38a169; color: #fff; padding: 10px 16px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.15); z-index: 9999; font-weight: 600; display: none; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .25s ease, transform .25s ease; }
     .toast.show { display: block; opacity: 1; transform: translateX(-50%) translateY(0); }
     @media (max-width: 680px) {
       .container { padding: 18px; }
@@ -167,7 +120,6 @@
           </div>
           <button class="wallet-button" onclick="copyToClipboard('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a')">📋 Copy</button>
         </li>
-
         <li>
           <div class="wallet-left">
             <span class="wallet-label">💵 USDT (TRC20)</span>
@@ -180,18 +132,20 @@
       <p class="support-text">Your support spreads kindness and inspires more good things in the world 🌍</p>
     </section>
 
-    <p class="easter-egg">
-      This page radiates positive energy and brings good luck. You are generous — the universe will return your kindness.
-    </p>
+    <div class="easter-egg-container">
+      <span class="easter-egg">
+        This page radiates positive energy and brings good luck.
+        <span class="super-easter-egg">
+          A generous donation here is a kind act that spreads waves of goodness. Share with others and let positivity multiply. May it be so.
+        </span>
+      </span>
+    </div>
 
     <div class="disclaimer">
       <p>⚠️ <strong>Disclaimer:</strong> Donations are completely voluntary and carry no obligations. Visitors must be 18+ — if you are under 18, please leave this page.</p>
     </div>
 
     <div class="footer-alvkinia">Alvkinia</div>
-    <div class="footer-donation">
-      A generous donation here is a kind act that spreads waves of goodness. Share with others and let positivity multiply. May it be so.
-    </div>
   </div>
 
   <div id="toast" class="toast">Thanks! 🤗💋</div>
@@ -199,14 +153,9 @@
   <script>
     function copyToClipboard(text) {
       if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(text)
-          .then(showToast)
-          .catch(showToast);
-      } else {
-        showToast();
-      }
+        navigator.clipboard.writeText(text).then(showToast).catch(showToast);
+      } else { showToast(); }
     }
-
     function showToast() {
       const t = document.getElementById('toast');
       t.classList.remove('show');
