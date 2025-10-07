@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Alvkinia. The Lucky Page of karma, positive energy, and good fortune.">
-  <title>Alvkinia. The Lucky Page — Karma & Positive Energy</title>
-
-  <meta property="og:title" content="Alvkinia. The Lucky Page — Karma & Positive Energy" />
-  <meta property="og:description" content="A lucky page filled with good karma, positivity, and kindness." />
+  <meta name="description" content="Alvkinia. A lucky page filled with luck, karma, good vibes, positive energy, and kindness.">
+  <meta name="keywords" content="Alvkinia, luck, karma, good vibes, positive energy, kindness, fortune, destiny, good luck, lucky page">
+  <title>Alvkinia. The Lucky Page</title>
+  
+  <meta property="og:title" content="Alvkinia. The Lucky Page" />
+  <meta property="og:description" content="Alvkinia. A lucky page filled with luck, karma, good vibes, positive energy, and kindness." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alvkinia.github.io/donate/" />
-
+  
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { width: 100%; overflow-x: hidden; }
@@ -33,25 +34,10 @@
       padding: 26px;
       margin: 20px auto;
     }
-    h1, h2 {
-      text-align: center;
-      color: #6b46c1;
-    }
-    h1 span {
-      display: block;
-      text-align: center;
-      margin-top: 5px;
-      font-size: 1.2em;
-    }
-    p {
-      margin-bottom: 12px;
-      line-height: 1.5;
-    }
-    a {
-      color: #c25cff;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
+    h1, h2 { text-align: center; color: #6b46c1; }
+    h1 span { display: block; text-align: center; margin-top: 5px; font-size: 1.2em; }
+    p { margin-bottom: 12px; line-height: 1.5; }
+    a { color: #c25cff; text-decoration: none; transition: color 0.2s ease; }
     a:hover { color: #a046d7; text-decoration: underline; }
     ul { list-style: none; padding: 0; margin: 0; }
     li {
@@ -72,112 +58,32 @@
       box-shadow: 0 0 18px rgba(107,70,193,0.45), 0 0 24px rgba(200,150,255,0.25);
       transform: translateY(-2px);
     }
-    .wallet-left {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      flex: 1 1 auto;
-      text-align: center;
-    }
-    .wallet-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 600;
-      color: #3b2a72;
-      font-size: 1rem;
-    }
-    .wallet-address {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.95rem;
-      background: #faf8ff;
-      padding: 6px 10px;
-      border-radius: 6px;
-      user-select: all;
-      word-break: break-all;
-      max-width: 100%;
-      line-height: 1.4;
-    }
-    .wallet-button {
-      flex: 0 0 auto;
-      background: #6b46c1;
-      color: #fff;
-      border: none;
-      padding: 9px 14px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.95rem;
-      white-space: nowrap;
-      transition: transform .12s ease, background .18s ease;
-    }
+    .wallet-left { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; flex: 1 1 auto; text-align: center; }
+    .wallet-label { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: #3b2a72; font-size: 1rem; }
+    .wallet-address { font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; background: #faf8ff; padding: 6px 10px; border-radius: 6px; user-select: all; word-break: break-all; max-width: 100%; line-height: 1.4; }
+    .wallet-button { flex: 0 0 auto; background: #6b46c1; color: #fff; border: none; padding: 9px 14px; border-radius: 6px; cursor: pointer; font-size: 0.95rem; white-space: nowrap; transition: transform .12s ease, background .18s ease; }
     .wallet-button:hover { transform: scale(1.05); background: #553c9a; }
-    .support-text {
-      text-align: center;
-      font-style: italic;
-      margin-top: 10px;
-    }
-    .easter-egg {
-      font-size: 0.25rem;
+    .support-text { text-align: center; font-style: italic; margin-top: 10px; }
+    .disclaimer { font-size: 0.88rem; color: #555; border-top: 1px solid #eee; padding-top: 12px; text-align: center; }
+    .footer-alvkinia { text-align: center; color: #e4e8ff; font-size: 0.9rem; margin-top: 6px; position: relative; cursor: default; }
+    .secret-text { font-size: 0.12rem; color: #e4e8ff; text-align: center; margin-top: 2px; user-select: none; }
+    .hidden-easter {
+      font-size: 0.1rem;
       color: #e4e8ff;
       text-align: center;
-      font-style: italic;
-      margin-top: 8px;
-      margin-bottom: 8px;
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: opacity .35s ease, max-height .35s ease;
-    }
-    .container:hover .easter-egg,
-    .container:focus-within .easter-egg {
-      opacity: 1;
-      max-height: 200px;
-    }
-    .disclaimer {
-      font-size: 0.88rem;
-      color: #555;
-      border-top: 1px solid #eee;
-      padding-top: 12px;
-      text-align: center;
-    }
-    .footer-alvkinia {
-      text-align: center;
-      color: #e4e8ff;
-      font-size: 0.9rem;
-      margin-top: 6px;
-    }
-    .secret-text {
-      font-size: 0.15rem;
-      color: #e4e8ff;
-      text-align: center;
-      margin-top: 4px;
       user-select: none;
-    }
-    .toast {
-      position: fixed;
-      left: 50%;
-      bottom: 26px;
-      transform: translateX(-50%);
-      background: #38a169;
-      color: #fff;
-      padding: 10px 16px;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-      z-index: 9999;
-      font-weight: 600;
-      display: none;
-      white-space: nowrap;
-      pointer-events: none;
       opacity: 0;
-      transition: opacity .25s ease, transform .25s ease;
+      transition: opacity 0.3s ease;
+      position: absolute;
+      width: 100%;
+      top: -12px;
+      left: 0;
     }
-    .toast.show {
-      display: block;
+    .footer-alvkinia:hover .hidden-easter {
       opacity: 1;
-      transform: translateX(-50%) translateY(0);
     }
+    .toast { position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%); background: #38a169; color: #fff; padding: 10px 16px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.15); z-index: 9999; font-weight: 600; display: none; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .25s ease, transform .25s ease; }
+    .toast.show { display: block; opacity: 1; transform: translateX(-50%) translateY(0); }
     @media (max-width: 680px) {
       .container { padding: 18px; }
       li { flex-direction: column; align-items: stretch; text-align: center; gap: 10px; }
@@ -191,13 +97,16 @@
   <div class="container" tabindex="0">
     <section>
       <h1>Hello and welcome!<span>👋😊</span></h1>
-      <p>I’m so glad you decided to stop by. Thank you! I hope we’ll become friends — life’s full of surprises, isn’t it?</p>
-      <p>I don’t want to be famous; I’m just here to meet like-minded people, to escape a bit of loneliness, and connect with kind, interesting souls.</p>
+      <p>I’m really glad you decided to visit. Thank you! I hope we can become friends — life is full of surprises, isn’t it?</p>
+    </section>
+
+    <section>
+      <p>I started this page to meet kind and like-minded people. I’m not seeking fame; I just want genuine connections built on good energy.</p>
     </section>
 
     <section>
       <h2>A little about me:</h2>
-      <p>I love good food 🍰, traveling ✈️, animals 🐾, music 🎵, and video games 🎮. Life hasn’t always been easy, but it made me stronger 💪. I believe in kindness, karma, and positive energy ✨.</p>
+      <p>I love good food 🍰, traveling ✈️, animals 🐾, music 🎵, and video games 🎮. Life hasn’t always been easy, but it made me stronger 💪. I believe in kindness, good vibes, and the universe's magic ✨.</p>
     </section>
 
     <section>
@@ -207,7 +116,7 @@
 
     <section>
       <h2>If you’d like to support me:</h2>
-      <p>A cup of coffee or a small donation means a lot ☕💖💅👜💍 Donations are completely optional and create no obligations — it’s simply a way to say “hi” if you’re feeling generous, or to do a kind act and spread good vibes, luck, and karma 😉</p>
+      <p>A cup of coffee or a small donation means a lot ☕💖💅👜💍 Donations are completely optional and create no obligations — it’s simply a way to say “hi” if you’re feeling generous, or to do a kind act and spread good vibes, luck, and joy 😉</p>
 
       <ul>
         <li>
@@ -217,7 +126,6 @@
           </div>
           <button class="wallet-button" onclick="copyToClipboard('bc1qyx6jkrukasmvaw8fasanwrx9jqq3zrmttlur0a')">📋 Copy</button>
         </li>
-
         <li>
           <div class="wallet-left">
             <span class="wallet-label">💵 USDT (TRC20)</span>
@@ -227,18 +135,17 @@
         </li>
       </ul>
 
-      <p class="support-text">Your support spreads kindness, positivity, and good karma in the world 🌍</p>
+      <p class="support-text">Your support spreads kindness and inspires more good things in the world 🌍</p>
     </section>
-
-    <p class="easter-egg">
-      This page radiates positive energy, good karma, and luck. You are generous — the universe will return your kindness.
-    </p>
 
     <div class="disclaimer">
       <p>⚠️ <strong>Disclaimer:</strong> Donations are completely voluntary and carry no obligations. Visitors must be 18+ — if you are under 18, please leave this page.</p>
     </div>
 
-    <div class="footer-alvkinia">Alvkinia</div>
+    <div class="footer-alvkinia">
+      Alvkinia
+      <div class="hidden-easter">This page radiates good vibes and brings good luck. You are generous — the universe will return your kindness.</div>
+    </div>
     <div class="secret-text">A generous donation here is a kind act that spreads waves of goodness. Share with others and let positivity multiply. May it be so.</div>
   </div>
 
@@ -247,14 +154,9 @@
   <script>
     function copyToClipboard(text) {
       if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(text)
-          .then(showToast)
-          .catch(showToast);
-      } else {
-        showToast();
-      }
+        navigator.clipboard.writeText(text).then(showToast).catch(showToast);
+      } else { showToast(); }
     }
-
     function showToast() {
       const t = document.getElementById('toast');
       t.classList.remove('show');
